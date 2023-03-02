@@ -2,7 +2,16 @@
 const http = require('http')
 
 const server = http.createServer((req, res) => {
-    res.end('hello')
+    if (req.url == "/") {
+        res.end('hello')
+    } else if (req.url == "/about") {
+
+        res.end("this is about page")
+    } else {
+        res.writeHead(404, { 'Content-type': "text/html" });
+        res.end("<h1>404 page doesnot exist</h1>")
+    }
+
 })
 
 //listen the request
