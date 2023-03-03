@@ -11,27 +11,19 @@ const server = http.createServer((req, res) => {
         res.end("this is about page")
     } else if (req.url == "/api") {
         fs.readFile(`${__dirname}/userApi.json`, 'utf-8', (err, data) => {
-            res.writeHead(200, { "Content-type": "application/json" });
-            console.log(data)
 
-            const objData = JSON.parse(data);
+            console.log(err)
 
-
-
-            res.end(objData[{}]);
-
-
-
-            // console.log(objData && objData.status ? objData.status : null);
-            // res.end(objData && objData.status ? JSON.stringify(objData.status) : null);
-            // res.writeHead(200, {"Content-type" : "application/json"});
-            // res.write(JSON.stringify(objData))
-            // res.end();
-
+            const objData = JSON.parse(data)
+            //if you get
+            // TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must 
+            // be of type string or an instance of Buffer or Uint8Array.
+            // Received type number use to.string()
+            res.end(objData[0].price.toString());
         })
 
-
     }
+
     else {
         res.writeHead(404, { 'Content-type': "text/html" });
         res.end("<h1>404 page doesnot exist</h1>")
@@ -45,8 +37,5 @@ server.listen(2000, "127.0.0.1", () => {
 })
 
 
-// fs.readFile = ('userApi.json', 'utf-8', (err, data) => {
-//     const jdata = JSON.parse(data)
-//     console.log(data)
-// })
+
 
