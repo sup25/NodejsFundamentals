@@ -16,6 +16,9 @@ const server = http.createServer((req, res) => {
         res.end('file not found')
     })
 
+    //using stream pipe
+    rstream.pipe(res);
+
 })
 
 server.listen(2000, "127.0.0.1", () => {
