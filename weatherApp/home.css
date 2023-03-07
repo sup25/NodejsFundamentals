@@ -1,0 +1,99 @@
+#container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+
+}
+
+/* making wave */
+#wave-one {
+
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+
+    animation: wavew 5s infinite;
+    border-radius: 50%;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.wave-two {
+
+
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+    background-color: coral;
+    color: white;
+    animation: mymove 5s infinite;
+    border-radius: 10%;
+}
+
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border: 1px solid navy;
+    border-radius: 40px;
+    width: 400px;
+    flex-direction: column;
+
+
+}
+
+#weathercon {
+    height: 150px;
+
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fa-street-view {
+    font-size: 30px;
+    animation: move-right 2s infinite;
+
+
+}
+
+@keyframes move-right {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
