@@ -15,24 +15,41 @@
 <body>
     <div id="container">
 
-        <div class="wave-two"></div>
-        <div class="wave-three"></div>
-        <div class="card">
-            <div id="wave-one"></div>
 
-            <div id="weathercon">
-                <i class="fa-solid fa-sun" style="color:#009DDC"></i>
-            </div>
+
+
+
+
+        <div class="card">
+
             <div class="info">
+                <div id="weathercon">
+                    <i class="fa-solid fa-sun" style="color:#009DDC"></i>
+                </div>
                 <h2 class="location"><i class="fa-solid fa-street-view"></i>Kathmandu NP</h2>
                 <p id="date">this is date</p>
+                <script>
+                    const d = new Date();
+                    document.getElementById("date").innerHTML = d;
+                </script>
+
                 <h1 class="temp">temperature</h1>
                 <h3 class="tmin_max">min max temp</h3>
+                <div class="wave-one">
+                    <div class="wave-two">
+                        <div class="wave-three">
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-
         </div>
+    </div>
+
+
+
+
+    </div>
     </div>
 
 </body>
