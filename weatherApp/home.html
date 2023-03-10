@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css" media="screen" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,29 +14,32 @@
 
 <body>
     <div id="container">
-
-
-
-
-
-
         <div class="card">
-
             <div class="info">
                 <div id="weathercon">
                     <i class="fa-solid fa-sun" style="color:#009DDC"></i>
                     <i class="fa-solid fa-cloud" style="color:#009DDC"></i>
                     <i class="fa-solid fa-umbrella" style="color:#009DDC"></i>
                 </div>
-                <h2 class="location"><i class="fa-solid fa-street-view"></i>Kathmandu NP</h2>
-                <p id="date">this is date</p>
+                <h2 class="location"><i class="fa-solid fa-street-view"></i>{%location%},{%country%}</h2>
+                <p id="date">date</p>
                 <script>
                     const d = new Date();
                     document.getElementById("date").innerHTML = d;
+                    let weathercon = document.getElementById("weathercon")
+                    const tempStatus = "{%tempstatus%}"
+
+                    if (tempStatus === "Sunny") {
+                        weathercon.innerHTML = "<i class='fa-solid fa-sun' style='color:#009DDC'><i>"
+                    } else if (tempStatus === "Clouds") {
+                        weathercon.innerHTML = '<i class="fa-solid fa-cloud" style="color:#009DDC"></i>'
+                    } else {
+                        weathercon.innerHTML = '  <i class="fa-solid fa-umbrella" style="color:#009DDC"></i>'
+                    }
                 </script>
 
-                <h1 class="temp">temperature</h1>
-                <h3 class="tmin_max">min max temp</h3>
+                <h1 class="temp">{%tempval%}°C</h1>
+                <h3 class="tmin_max">Min temp {%tempmin%}°C | Max temp {%tempmax%}°C</h3>
                 <div class="wave-one">
                     <div class="wave-two">
                         <div class="wave-three">
@@ -47,13 +50,8 @@
 
         </div>
     </div>
-
-
-
-
     </div>
     </div>
-
 </body>
 
 </html>
