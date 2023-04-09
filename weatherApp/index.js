@@ -16,13 +16,7 @@ const replaceVal = (tempVal, orgVal) => {
 const apiEndpoint = 'http://api.openweathermap.org/data/2.5/weather?q=Kathmandu&APPID=8f8a93e05a369081a64d3fdfd06881f2&units=metric';
 
 const server = http.createServer((req, res) => {
-    function css(request, response) {
-        if (request.url === '/home.css') {
-            response.writeHead(200, { 'Content-type': 'text/css' });
-            var fileContents = fs.readFileSync('styles.css', { encoding: 'utf8' });
-            response.write(fileContents);
-        }
-    }
+
     http.get(apiEndpoint, (resp) => {
         let data = "";
 
